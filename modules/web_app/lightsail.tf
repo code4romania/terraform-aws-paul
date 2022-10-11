@@ -51,6 +51,8 @@ resource "aws_lightsail_container_service_deployment_version" "container_deploym
       "AWS_SECRET_ACCESS_KEY"   = aws_iam_access_key.iam_user_key.secret
       "AWS_STORAGE_BUCKET_NAME" = "aws_s3_bucket.media.bucket"
       "AWS_S3_REGION_NAME"      = var.region
+
+      "RUN_COLLECT_STATIC" = "yes"
     }
 
     ports = {
