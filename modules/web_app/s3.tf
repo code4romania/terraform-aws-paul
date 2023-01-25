@@ -6,7 +6,7 @@ resource "random_string" "bucket_suffix" {
 }
 
 resource "aws_s3_bucket" "media" {
-  bucket = "${local.namespace}-media-${random_string.bucket_suffix.result}"
+  bucket = "${local.namespace}-${random_string.bucket_suffix.result}"
 }
 
 resource "aws_s3_bucket_acl" "media_acl" {

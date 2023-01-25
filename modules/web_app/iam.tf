@@ -1,5 +1,5 @@
 resource "aws_iam_user" "iam_user" {
-  name = "${aws_s3_bucket.media.bucket}-user"
+  name = "${local.namespace}-user"
 }
 
 resource "aws_iam_access_key" "iam_user_key" {
