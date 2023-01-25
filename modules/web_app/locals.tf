@@ -21,10 +21,6 @@ locals {
     availability_zone = "${var.region}${var.availability_zone}"
   }
 
-  media = {
-    s3_bucket_name = "${local.namespace}-media"
-  }
-
   ses_count = var.ses_domain != null ? 1 : 0
 
   mail = {
