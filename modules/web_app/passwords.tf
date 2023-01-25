@@ -1,7 +1,6 @@
 resource "random_password" "db_pass" {
-  length           = 16
-  special          = true
-  override_special = "!#$%_-"
+  length  = 32
+  special = false
 
   lifecycle {
     ignore_changes = [
@@ -12,7 +11,7 @@ resource "random_password" "db_pass" {
 }
 
 resource "random_password" "app_key" {
-  length  = 32
+  length  = 50
   special = true
 
   lifecycle {
@@ -25,7 +24,7 @@ resource "random_password" "app_key" {
 
 resource "random_password" "admin_password" {
   length  = 16
-  special = true
+  special = false
 
   lifecycle {
     ignore_changes = [
