@@ -1,5 +1,12 @@
+resource "random_string" "bucket_suffix" {
+  length  = 8
+  special = false
+  upper   = false
+  numeric = false
+}
+
 resource "aws_s3_bucket" "media" {
-  bucket = local.media.s3_bucket_name
+  bucket = "${local.namespace}-${random_string.bucket_suffix.result}"
 }
 
 resource "aws_s3_bucket_acl" "media_acl" {
