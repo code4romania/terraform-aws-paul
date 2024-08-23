@@ -14,7 +14,7 @@ locals {
 
   database = {
     name              = "${local.namespace}-db"
-    blueprint_id      = "postgres_12"
+    blueprint_id      = "postgres_16"
     bundle_id         = "micro_2_0"
     username          = "psqladmin"
     password          = random_password.db_pass.result
